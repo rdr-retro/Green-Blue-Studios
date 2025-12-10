@@ -176,19 +176,52 @@
       }
     }
 
+    /* 🔹 Mejor versión para pantallas móviles */
     @media (max-width: 700px) {
-      .info-box {
+      header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1.5rem;
+        gap: 0.8rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0.8rem 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 3rem 1.5rem;
+      }
+
+      .info-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 3rem auto;
+        text-align: center;
       }
 
       .colored-rectangle {
-        width: 100%;
-        height: 180px;
+        width: 90%;
+        height: 200px;
       }
 
       .info-text {
         font-size: 1.1rem;
+        line-height: 1.6;
+        padding: 0 1rem;
+      }
+
+      .white-line {
+        width: 85%;
+        margin: 2.5rem auto;
+      }
+
+      .project-2d-image {
+        max-width: 95%;
+        margin: 1.5rem auto;
       }
     }
   </style>
@@ -219,109 +252,107 @@
     </p>
 
     <img src="img1.png" alt="Arte de Project 2D" class="project-2d-image" />
-  <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="1.png" alt="Imagen dentro del rectángulo" />
-  </div>
-  <span class="info-text">
-    <strong>Principos</strong><br>
-    Motor 2D propio basado en una cuadrícula de 13x13 tiles de 48x48 píxeles.
-    Gestiona movimiento, colisiones y renderizado de mapas cargados desde
-    archivos <strong>.world</strong>, permitiendo combinar gráficos estáticos y animaciones.
-  </span>
-</div>
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="1.png" alt="Imagen dentro del rectángulo" />
+      </div>
+      <span class="info-text">
+        <strong>Principos</strong><br>
+        Motor 2D propio basado en una cuadrícula de 13x13 tiles de 48x48 píxeles.
+        Gestiona movimiento, colisiones y renderizado de mapas cargados desde
+        archivos <strong>.world</strong>, permitiendo combinar gráficos estáticos y animaciones.
+      </span>
+    </div>
 
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<hr class="white-line" style="animation-delay: 2s;" />
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="1.png" alt="Imagen dentro del rectángulo" />
+      </div>
+      <span class="info-text">
+        <strong>Motor 2D</strong><br>
+        Motor propio basado en una cuadrícula de 13x13 tiles de 48x48 píxeles.
+        Se encarga del movimiento, las colisiones y el renderizado de mapas
+        cargados desde archivos <strong>.world</strong>, combinando gráficos
+        estáticos y animaciones de forma eficiente.
+      </span>
+    </div>
 
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="1.png" alt="Imagen dentro del rectángulo" />
-  </div>
-  <span class="info-text">
-    <strong>Motor 2D</strong><br>
-    Motor propio basado en una cuadrícula de 13x13 tiles de 48x48 píxeles.
-    Se encarga del movimiento, las colisiones y el renderizado de mapas
-    cargados desde archivos <strong>.world</strong>, combinando gráficos
-    estáticos y animaciones de forma eficiente.
-  </span>
-</div>
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<hr class="white-line" style="animation-delay: 2s;" />
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="img1.png" alt="Imagen dentro del rectángulo" />
+      </div>
+      <span class="info-text">
+        <strong>Editor de Mapas</strong><br>
+        Herramienta de creación de niveles por tiles con soporte multicapa.
+        Permite pintar mapas usando imágenes PNG y animaciones, guardando
+        únicamente los elementos existentes en un archivo de texto
+        <strong>.world</strong> optimizado y fácil de interpretar.
+      </span>
+    </div>
 
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="img1.png" alt="Imagen dentro del rectángulo" />
-  </div>
-  <span class="info-text">
-    <strong>Editor de Mapas</strong><br>
-    Herramienta de creación de niveles por tiles con soporte multicapa.
-    Permite pintar mapas usando imágenes PNG y animaciones, guardando
-    únicamente los elementos existentes en un archivo de texto
-    <strong>.world</strong> optimizado y fácil de interpretar.
-  </span>
-</div>
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<hr class="white-line" style="animation-delay: 2s;" />
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="img4.png" alt="Imagen dentro del rectángulo" />
+      </div>
+      <span class="info-text">
+        <strong>Paint de Tiles y Animaciones</strong><br>
+        Aplicación para dibujar tiles personalizados y crear animaciones.
+        Genera archivos PNG y <strong>.animation</strong> que pueden ser
+        reutilizados directamente en mapas y menús, manteniendo coherencia
+        visual en todo el proyecto.
+      </span>
+    </div>
 
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="img4.png" alt="Imagen dentro del rectángulo" />
-  </div>
-  <span class="info-text">
-    <strong>Paint de Tiles y Animaciones</strong><br>
-    Aplicación para dibujar tiles personalizados y crear animaciones.
-    Genera archivos PNG y <strong>.animation</strong> que pueden ser
-    reutilizados directamente en mapas y menús, manteniendo coherencia
-    visual en todo el proyecto.
-  </span>
-</div>
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<hr class="white-line" style="animation-delay: 2s;" />
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="img2.png" alt="Imagen dentro del rectángulo" />
+      </div>
+      <span class="info-text">
+        <strong>Editor de Glifos y Texto</strong><br>
+        Convierte fuentes TTF en spritesheets de caracteres.
+        El texto pasa a ser parte del mundo gráfico, permitiendo mostrar
+        letras como tiles y mantener un estilo visual totalmente integrado
+        con el motor.
+      </span>
+    </div>
 
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="img2.png" alt="Imagen dentro del rectángulo" />
-  </div>
-  <span class="info-text">
-    <strong>Editor de Glifos y Texto</strong><br>
-    Convierte fuentes TTF en spritesheets de caracteres.
-    El texto pasa a ser parte del mundo gráfico, permitiendo mostrar
-    letras como tiles y mantener un estilo visual totalmente integrado
-    con el motor.
-  </span>
-</div>
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<hr class="white-line" style="animation-delay: 2s;" />
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="img3.png" alt="Imagen dentro del rectáng" />
+      </div>
+      <span class="info-text">
+        <strong>Editor de Menús</strong><br>
+        Sistema en desarrollo para crear pantallas como menú principal y pausa.
+        Utiliza tiles, animaciones y texto por sprites, asegurando que los menús
+        compartan el mismo lenguaje visual y técnico que el resto del juego.
+      </span>
+    </div>
 
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="img3.png" alt="Imagen dentro del rectáng" />
-  </div>
-  <span class="info-text">
-    <strong>Editor de Menús</strong><br>
-    Sistema en desarrollo para crear pantallas como menú principal y pausa.
-    Utiliza tiles, animaciones y texto por sprites, asegurando que los menús
-    compartan el mismo lenguaje visual y técnico que el resto del juego.
-  </span>
-</div>
+    <hr class="white-line" style="animation-delay: 2s;" />
 
-<hr class="white-line" style="animation-delay: 2s;" />
-
-<div class="info-box">
-  <div class="colored-rectangle">
-    <img src="1.png" alt="Imagen dentro del rectángulo" />
-  </div>
-  <span class="info-text">
-    <strong>Filosofía del Proyecto</strong><br>
-    Todo el sistema está construido con herramientas propias y formatos simples.
-    Cada componente es independiente pero compatible, permitiendo un desarrollo
-    flexible, comprensible y preparado para crecer sin romper la base existente.
-  </span>
-</div>
-
-
+    <div class="info-box">
+      <div class="colored-rectangle">
+        <img src="1.png" alt="Imagen dentro del rectángulo" />
+      </div>
+      <span class="info-text">
+        <strong>Filosofía del Proyecto</strong><br>
+        Todo el sistema está construido con herramientas propias y formatos simples.
+        Cada componente es independiente pero compatible, permitiendo un desarrollo
+        flexible, comprensible y preparado para crecer sin romper la base existente.
+      </span>
+    </div>
+  </section>
 </body>
 </html>
