@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Green Blue Studios</title>
 
-  <!-- 🔹 Imagen en la pestaña -->
-  <link rel="icon" href="logo2.png" type="image/png" />
+    <link rel="icon" href="logo2.png" type="image/png" />
 
   <style>
+    :root {
+      /* Definición de variables base */
+      --max-width: 800px;
+      --font-large: 1.3rem;
+      --font-medium: 1rem;
+      --font-small: 0.9rem;
+    }
+
     body {
       margin: 0;
-      background-color: #000; /* Fondo negro puro */
+      background-color: #000;
       color: white;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
     }
 
     header {
-      background-color: #1a1a1a; /* Barra superior gris oscuro */
+      background-color: #1a1a1a;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -32,7 +39,7 @@
       color: #ccc;
       margin: 0 1rem;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: var(--font-small);
       transition: color 0.3s;
     }
 
@@ -54,7 +61,7 @@
     section {
       padding: 4rem 2rem;
       text-align: center;
-      background-color: #000; /* Fondo negro */
+      background-color: #000;
     }
 
     section h2 {
@@ -118,22 +125,28 @@
       animation: fadeInSmoky 1.2s ease forwards;
     }
 
+    /* 💡 Contenedor principal: siempre en fila y escalable */
     .info-box {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       gap: 1.5rem;
       margin: 2.5rem auto;
-      max-width: 800px;
+      max-width: var(--max-width);
       text-align: left;
       opacity: 0;
       animation: fadeInSmoky 1.5s ease forwards;
       animation-delay: 1.5s;
+      padding: 0 1rem;
     }
 
+    /* 💡 Imagen: usa vw como mínimo, con máximo fijo */
     .colored-rectangle {
-      width: 250px;
-      height: 150px;
+      width: 20vw; /* Base de 20% del viewport */
+      min-width: 100px; /* Tamaño mínimo para que no desaparezca */
+      max-width: 250px;
+      height: auto; /* Altura automática basada en el contenido */
+      aspect-ratio: 5 / 3; /* Mantiene la proporción 250x150 */
       padding: 5px;
       background: linear-gradient(135deg, #0073ff, #30d588);
       overflow: hidden;
@@ -151,8 +164,11 @@
       background-color: #000;
     }
 
+    /* 💡 Texto: ocupa el resto del espacio disponible */
     .info-text {
-      font-size: 1.3rem;
+      flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+      font-size: calc(1rem + 0.3vw);
+      min-font-size: var(--font-medium);
       color: #eee;
       font-weight: 500;
       line-height: 1.4;
@@ -176,8 +192,8 @@
       }
     }
 
-    /* 🔹 Versión optimizada para móvil */
-    @media (max-width: 700px) {
+    /* 🔹 Media Query para un escalado más agresivo en pantallas pequeñas */
+    @media (max-width: 600px) {
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -192,48 +208,41 @@
       }
 
       section {
-        padding: 2.5rem 1rem;
+        padding: 2.5rem 0.5rem; /* Menos padding lateral */
       }
 
       .info-box {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin: 2rem auto;
-        text-align: center;
-        max-width: 90%;
-        transform: scale(0.9); /* 🔹 Reduce el tamaño general */
-      }
-
-      .colored-rectangle {
-        width: 80%;
-        height: 140px;
-      }
-
-      .info-text {
-        font-size: 1rem;
-        line-height: 1.5;
+        /* Aseguramos que siempre estén en fila, sin transform: scale() */
+        gap: 0.8rem; /* Menos espacio entre imagen y texto */
+        margin: 1.5rem auto; /* Más compacto */
+        max-width: 95%; /* Usa casi todo el ancho */
         padding: 0 0.5rem;
       }
 
-      .white-line {
-        width: 70%;
-        height: 1px; /* 🔹 Más delgada */
-        margin: 1.5rem auto;
-        opacity: 0.8;
+      .colored-rectangle {
+        width: 30vw; /* La imagen es un poco más grande en móviles */
+        min-width: 80px; /* Aseguramos que se vea */
+        aspect-ratio: 5 / 3;
+        padding: 3px;
       }
 
-      .project-2d-image {
-        max-width: 85%;
+      .info-text {
+        font-size: 0.9rem; /* Fuente pequeña y fija para móviles */
+        line-height: 1.4;
+      }
+
+      .white-line {
+        width: 80%;
+        height: 1px;
         margin: 1rem auto;
       }
 
       section h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
       }
 
       section p {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
     }
   </style>
