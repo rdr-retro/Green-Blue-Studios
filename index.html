@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Green Blue Studios</title>
 
+  <!-- 🔹 Favicon (imagen de la pestaña) -->
+  <link rel="icon" href="logo2.png" type="image/png" />
+
   <style>
     body {
       margin: 0;
-      background-color: #0e0e0e;
+      background-color: #000; /* Fondo negro puro */
       color: white;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
     }
 
     header {
-      background-color: #1a1a1a;
+      background-color: #1a1a1a; /* Parte superior gris oscuro */
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -49,7 +50,7 @@
     }
 
     .hero {
-      background: url('https://media.blendernation.com/wp-content/uploads/2021/08/blender3.0.jpg') center/cover no-repeat;
+      background: none; /* Sin imagen de fondo */
       padding: 4rem 2rem;
       text-align: center;
     }
@@ -75,7 +76,7 @@
     section {
       padding: 4rem 2rem;
       text-align: center;
-      background-color: #111;
+      background-color: #000; /* Negro puro */
     }
 
     section h2 {
@@ -128,7 +129,6 @@
       animation-delay: 1.6s;
     }
 
-    /* Botón con efecto humo */
     .btn-open-entry {
       display: inline-block;
       padding: 0.8rem 1.6rem;
@@ -154,7 +154,6 @@
       transform: translateY(0);
     }
 
-    /* Efecto humo (animación base) */
     @keyframes fadeInSmoky {
       0% {
         opacity: 0;
@@ -218,7 +217,6 @@
     </p>
 
     <img src="img1.png" alt="Arte de Project 2D" class="project-2d-image" />
-    
     <a href="2d.html" class="btn-open-entry">Abrir entrada</a>
   </section>
 </body>
