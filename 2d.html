@@ -176,52 +176,64 @@
       }
     }
 
-    /* 🔹 Mejor versión para pantallas móviles */
+    /* 🔹 Versión optimizada para móvil */
     @media (max-width: 700px) {
       header {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1.5rem;
-        gap: 0.8rem;
+        padding: 1.2rem;
+        gap: 0.6rem;
       }
 
       nav a {
         display: inline-block;
-        margin: 0.5rem 0.8rem 0.5rem 0;
-        font-size: 1rem;
+        margin: 0.3rem 0.6rem 0.3rem 0;
+        font-size: 0.95rem;
       }
 
       section {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1rem;
       }
 
       .info-box {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
-        margin: 3rem auto;
+        gap: 1rem;
+        margin: 2rem auto;
         text-align: center;
+        max-width: 90%;
+        transform: scale(0.9); /* 🔹 Reduce el tamaño general */
       }
 
       .colored-rectangle {
-        width: 90%;
-        height: 200px;
+        width: 80%;
+        height: 140px;
       }
 
       .info-text {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        padding: 0 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 0 0.5rem;
       }
 
       .white-line {
-        width: 85%;
-        margin: 2.5rem auto;
+        width: 70%;
+        height: 1px; /* 🔹 Más delgada */
+        margin: 1.5rem auto;
+        opacity: 0.8;
       }
 
       .project-2d-image {
-        max-width: 95%;
-        margin: 1.5rem auto;
+        max-width: 85%;
+        margin: 1rem auto;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      section p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -266,7 +278,7 @@
       </span>
     </div>
 
-    <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" />
 
     <div class="info-box">
       <div class="colored-rectangle">
@@ -281,7 +293,7 @@
       </span>
     </div>
 
-    <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" />
 
     <div class="info-box">
       <div class="colored-rectangle">
@@ -296,7 +308,7 @@
       </span>
     </div>
 
-    <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" />
 
     <div class="info-box">
       <div class="colored-rectangle">
@@ -311,7 +323,7 @@
       </span>
     </div>
 
-    <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" />
 
     <div class="info-box">
       <div class="colored-rectangle">
@@ -326,7 +338,7 @@
       </span>
     </div>
 
-    <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" />
 
     <div class="info-box">
       <div class="colored-rectangle">
@@ -340,7 +352,7 @@
       </span>
     </div>
 
-    <hr class="white-line" style="animation-delay: 2s;" />
+    <hr class="white-line" />
 
     <div class="info-box">
       <div class="colored-rectangle">
