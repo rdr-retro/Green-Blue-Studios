@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Blue Studios</title>
+
+  <link rel="icon" href="logo2.png" type="image/png" />
+
+  <style>
+    :root {
+      /* Definición de variables base */
+      --max-width: 800px;
+      --font-large: 1.3rem;
+      --font-medium: 1rem;
+      --font-small: 0.9rem;
+    }
+
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      animation: fadeInSmoky 1.2s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: var(--font-small);
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-title img {
+      height: 40px;
+      width: auto;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #000;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeInSmoky 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .title-gradient {
+      background: linear-gradient(to right, #30d588, #0073ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem auto;
+      color: #ccc;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInSmoky 1.5s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .dev-badge {
+      display: inline-block;
+      margin-left: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      background-color: #ff9800;
+      color: #000;
+      border-radius: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.05em;
+    }
+
+    .odeug-image {
+      max-width: 350px;
+      width: 90%;
+      height: auto;
+      display: block;
+      margin: 4rem auto 2rem auto; /* Added 4rem top margin */
+      opacity: 0;
+      animation: fadeInSmoky 1.5s ease forwards;
+      animation-delay: 1s;
+      image-rendering: pixelated;
+      /* Pixel Perfect */
+    }
+    .screenshot-image {
+      max-width: 600px;
+      width: 95%;
+      height: auto;
+      display: block;
+      margin: 3rem auto;
+      border: 4px solid #1a1a1a;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      animation: fadeInSmoky 1.5s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    .white-line {
+      border: none;
+      height: 2px;
+      width: 80%;
+      margin: 2rem auto;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9), transparent);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSmoky 1.2s ease forwards;
+    }
+
+    /* 💡 Contenedor principal: siempre en fila y escalable */
+    .info-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      margin: 2.5rem auto;
+      max-width: var(--max-width);
+      text-align: left;
+      opacity: 0;
+      animation: fadeInSmoky 1.5s ease forwards;
+      animation-delay: 1.5s;
+      padding: 0 1rem;
+    }
+
+    /* 💡 Imagen: usa vw como mínimo, con máximo fijo */
+    .colored-rectangle {
+      width: 20vw;
+      /* Base de 20% del viewport */
+      min-width: 100px;
+      /* Tamaño mínimo para que no desaparezca */
+      max-width: 250px;
+      height: auto;
+      /* Altura automática basada en el contenido */
+      aspect-ratio: 5 / 3;
+      /* Mantiene la proporción 250x150 */
+      padding: 5px;
+      background: linear-gradient(135deg, #0073ff, #30d588);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .colored-rectangle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      background-color: #000;
+    }
+
+    /* 💡 Texto: ocupa el resto del espacio disponible */
+    .info-text {
+      flex-grow: 1;
+      /* Permite que el texto ocupe el espacio restante */
+      font-size: calc(1rem + 0.3vw);
+      min-font-size: var(--font-medium);
+      color: #eee;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    @keyframes fadeInSmoky {
+      0% {
+        opacity: 0;
+        filter: blur(30px);
+        transform: translateY(30px);
+      }
+
+      50% {
+        opacity: 0.6;
+        filter: blur(15px);
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+    }
+
+    /* 🔹 Media Query para un escalado más agresivo en pantallas pequeñas */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem;
+        gap: 0.6rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.3rem 0.6rem 0.3rem 0;
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 2.5rem 0.5rem;
+        /* Menos padding lateral */
+      }
+
+      .info-box {
+        /* Aseguramos que siempre estén en fila, sin transform: scale() */
+        gap: 0.8rem;
+        /* Menos espacio entre imagen y texto */
+        margin: 1.5rem auto;
+        /* Más compacto */
+        max-width: 95%;
+        /* Usa casi todo el ancho */
+        padding: 0 0.5rem;
+      }
+
+      .colored-rectangle {
+        width: 30vw;
+        /* La imagen es un poco más grande en móviles */
+        min-width: 80px;
+        /* Aseguramos que se vea */
+        aspect-ratio: 5 / 3;
+        padding: 3px;
+      }
+
+      .info-text {
+        font-size: 0.9rem;
+        /* Fuente pequeña y fija para móviles */
+        line-height: 1.4;
+      }
+
+      .white-line {
+        width: 80%;
+        height: 1px;
+        margin: 1rem auto;
+      }
+
+      section h2 {
+        font-size: 1.4rem;
+      }
+
+      section p {
+        font-size: 0.95rem;
+      }
+    }
+
+    .pixel-text-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2px;
+      margin-top: 2rem;
+      image-rendering: pixelated;
+      opacity: 0;
+      animation: fadeInSmoky 1.5s ease forwards;
+      animation-delay: 1.1s;
+    }
+
+    .pixel-char {
+      width: 18px;
+      height: 18px;
+      background-image: url('font.png');
+      background-size: 288px 108px; /* 75% of 384x144 */
+      background-repeat: no-repeat;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .pixel-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 4px;
+    }
+
+    .pink-text .pixel-char {
+      background-color: #ff69b4; /* Pink Tint */
+      background-blend-mode: multiply;
+    }
+
+    .blue-text .pixel-char {
+      background-color: #00aaff; /* Blue Tint */
+      background-blend-mode: multiply;
+    }
+
+    .red-text .pixel-char {
+      background-color: #ff0000; /* YouTube Red */
+      background-blend-mode: multiply;
+    }
+
+    .orange-text .pixel-char {
+      background-color: #ff9800; /* Orange Tint */
+      background-blend-mode: multiply;
+    }
+
+    /* Enchanted Glint Effect */
+    @keyframes enchanted-glint {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .enchanted .pixel-char {
+      position: relative;
+    }
+
+    .enchanted .pixel-char::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(105deg, 
+        transparent 30%, 
+        rgba(154, 54, 255, 0.8) 45%, 
+        rgba(255, 100, 255, 0.8) 50%, 
+        rgba(154, 54, 255, 0.8) 55%, 
+        transparent 70%
+      );
+      background-size: 200% 100%;
+      animation: enchanted-glint 3s linear infinite;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .pixel-text-container.interactive {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .pixel-text-container.interactive:hover {
+      transform: scale(1.05);
+    }
+
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-title">
+      <img src="logo.png" alt="Logo" />
+      <strong>Green Blue Studios</strong>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="#odeug">Odeug</a>
+      <button id="lang-toggle" class="lang-btn">EN/ES</button>
+    </nav>
+  </header>
+  <section id="odeug">
+    <img src="odeug.png" alt="Odeug Pixel Art" class="odeug-image" />
+
+    <div id="pixel-text-demo" class="pixel-text-container"></div>
+    
+    <a href="https://github.com/rdr-retro/odeug-releases/releases/download/launcherwin0.3/Odeug.Launcher-0.3.exe" style="text-decoration: none;">
+      <div id="pixel-text-download" class="pixel-text-container blue-text interactive enchanted" style="margin-top: 3rem;"></div>
+    </a>
+
+    <a href="https://www.youtube.com/@raul_digital" target="_blank" style="text-decoration: none;">
+      <div id="pixel-text-youtube" class="pixel-text-container red-text interactive" style="margin-top: 1rem; margin-bottom: 0.5rem;"></div>
+    </a>
+
+    <a href="https://www.reddit.com/r/odeug/" target="_blank" style="text-decoration: none;">
+      <div id="pixel-text-reddit" class="pixel-text-container orange-text interactive" style="margin-top: 0.5rem; margin-bottom: 2rem;"></div>
+    </a>
+
+    <img src="cap1.png" alt="Odeug Gameplay" class="screenshot-image" />
+
+    <div id="pixel-text-slogan" class="pixel-text-container" style="margin-top: 1rem;"></div>
+    
+    <div id="pixel-text-philosophy" class="pixel-text-container pink-text" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;"></div>
+
+    <div id="pixel-text-compat" class="pixel-text-container" style="margin-top: 1rem;"></div>
+
+    <div id="pixel-text-features-1" class="pixel-text-container" style="margin-top: 2rem;"></div>
+    <div id="pixel-text-features-2" class="pixel-text-container" style="margin-top: 0.5rem;"></div>
+    <div id="pixel-text-features-3" class="pixel-text-container orange-text" style="margin-top: 0.5rem;"></div>
+    <div id="pixel-text-multi" class="pixel-text-container" style="margin-top: 1rem;"></div>
+    <div id="pixel-text-disclaimer" class="pixel-text-container orange-text" style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;"></div>
+    
+    <img src="casa.png" alt="Odeug House" class="screenshot-image" />
+  </section>
+
+  <script>
+    const fontData = [
+      { "char": "!", "x": 24, "y": 0 }, { "char": "\"", "x": 48, "y": 0 }, { "char": "#", "x": 72, "y": 0 }, { "char": "$", "x": 96, "y": 0 },
+      { "char": "%", "x": 120, "y": 0 }, { "char": "&", "x": 144, "y": 0 }, { "char": "'", "x": 168, "y": 0 }, { "char": "(", "x": 192, "y": 0 },
+      { "char": ")", "x": 216, "y": 0 }, { "char": "*", "x": 240, "y": 0 }, { "char": "+", "x": 264, "y": 0 }, { "char": ",", "x": 288, "y": 0 },
+      { "char": "-", "x": 312, "y": 0 }, { "char": ".", "x": 336, "y": 0 }, { "char": "/", "x": 360, "y": 0 }, { "char": ":", "x": 240, "y": 24 },
+      { "char": ";", "x": 264, "y": 24 }, { "char": "<", "x": 288, "y": 24 }, { "char": "=", "x": 312, "y": 24 }, { "char": ">", "x": 336, "y": 24 },
+      { "char": "?", "x": 360, "y": 24 }, { "char": "@", "x": 0, "y": 48 }, { "char": "[", "x": 264, "y": 72 }, { "char": "\\", "x": 288, "y": 72 },
+      { "char": "]", "x": 312, "y": 72 }, { "char": "^", "x": 336, "y": 72 }, { "char": "_", "x": 360, "y": 72 }, { "char": "`", "x": 0, "y": 96 },
+      { "char": "{", "x": 264, "y": 120 }, { "char": "¦", "x": 288, "y": 120 }, { "char": "}", "x": 312, "y": 120 }, { "char": "~", "x": 336, "y": 120 },
+      { "char": "0", "x": 0, "y": 24 }, { "char": "1", "x": 24, "y": 24 }, { "char": "2", "x": 48, "y": 24 }, { "char": "3", "x": 72, "y": 24 },
+      { "char": "4", "x": 96, "y": 24 }, { "char": "5", "x": 120, "y": 24 }, { "char": "6", "x": 144, "y": 24 }, { "char": "7", "x": 168, "y": 24 },
+      { "char": "8", "x": 192, "y": 24 }, { "char": "9", "x": 216, "y": 24 }, { "char": "a", "x": 24, "y": 48 }, { "char": "b", "x": 48, "y": 48 },
+      { "char": "c", "x": 72, "y": 48 }, { "char": "d", "x": 96, "y": 48 }, { "char": "e", "x": 120, "y": 48 }, { "char": "f", "x": 144, "y": 48 },
+      { "char": "g", "x": 168, "y": 48 }, { "char": "i", "x": 216, "y": 48 }, { "char": "j", "x": 240, "y": 48 }, { "char": "k", "x": 264, "y": 48 },
+      { "char": "l", "x": 288, "y": 48 }, { "char": "m", "x": 312, "y": 48 }, { "char": "n", "x": 336, "y": 48 }, { "char": "o", "x": 360, "y": 48 },
+      { "char": "p", "x": 0, "y": 72 }, { "char": "q", "x": 24, "y": 72 }, { "char": "r", "x": 48, "y": 72 }, { "char": "s", "x": 72, "y": 72 },
+      { "char": "t", "x": 96, "y": 72 }, { "char": "u", "x": 120, "y": 72 }, { "char": "h", "x": 192, "y": 48 }, { "char": "v", "x": 144, "y": 72 },
+      { "char": "w", "x": 168, "y": 72 }, { "char": "x", "x": 192, "y": 72 }, { "char": "y", "x": 216, "y": 72 }, { "char": "z", "x": 240, "y": 72 },
+      { "char": "A", "x": 24, "y": 96 }, { "char": "B", "x": 48, "y": 96 }, { "char": "C", "x": 72, "y": 96 }, { "char": "D", "x": 96, "y": 96 },
+      { "char": "E", "x": 120, "y": 96 }, { "char": "F", "x": 144, "y": 96 }, { "char": "W", "x": 168, "y": 120 }, { "char": "G", "x": 168, "y": 96 },
+      { "char": "H", "x": 192, "y": 96 }, { "char": "J", "x": 240, "y": 96 }, { "char": "K", "x": 264, "y": 96 }, { "char": "L", "x": 288, "y": 96 },
+      { "char": "M", "x": 312, "y": 96 }, { "char": "N", "x": 336, "y": 96 }, { "char": "O", "x": 360, "y": 96 }, { "char": "P", "x": 0, "y": 120 },
+      { "char": "Q", "x": 24, "y": 120 }, { "char": "R", "x": 48, "y": 120 }, { "char": "S", "x": 72, "y": 120 }, { "char": "T", "x": 96, "y": 120 },
+      { "char": "U", "x": 120, "y": 120 }, { "char": "V", "x": 144, "y": 120 }, { "char": "X", "x": 192, "y": 120 }, { "char": "Y", "x": 216, "y": 120 },
+      { "char": "Z", "x": 240, "y": 120 }, { "char": "█", "x": 360, "y": 120 }, { "char": "I", "x": 216, "y": 96 }, { "char": " ", "x": 0, "y": 0 }
+    ];
+
+    const fontMap = {};
+    fontData.forEach(item => {
+      fontMap[item.char] = item;
+    });
+
+    function renderText(text, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      for (const char of text) {
+        const charData = fontMap[char] || fontMap[' '];
+        const charDiv = document.createElement('div');
+        charDiv.className = 'pixel-char';
+        charDiv.style.backgroundPosition = `-${charData.x * 0.75}px -${charData.y * 0.75}px`;
+        container.appendChild(charDiv);
+      }
+    }
+
+    const translations = {
+      es: {
+        demo: "Descubre la perfeccion tecnica en voxeles",
+        slogan: "Motor personalizado en Java y LWJGL",
+        philosophy: "Precision matematica y escalado pixel-perfect",
+        compat: "Total compatibilidad con skins clasicas",
+        f1: "Lenguaje Java - Rendimiento optimizado",
+        f2: "Pipeline OpenGL optimizado y Vulkan en camino",
+        f3: "GUI Dinamica con escalado baseline 2.0",
+        multi: "Sistema multijugador en camino",
+        disclaimer: "Estado Alpha: Desarrollo activo y constante",
+        download: "Obtener Odeug Launcher",
+        youtube: "Visita nuestro canal de YouTube",
+        reddit: "Unete a la comunidad en Reddit"
+      },
+      en: {
+        demo: "Discover technical voxel perfection",
+        slogan: "Custom engine built on Java and LWJGL",
+        philosophy: "Mathematical precision and pixel-perfect scaling",
+        compat: "Full compatibility with classic skins",
+        f1: "Java Language - Optimized performance",
+        f2: "Optimized OpenGL pipeline and Vulkan soon",
+        f3: "Dynamic GUI with 2.0 baseline scaling",
+        multi: "Multiplayer system on the way",
+        disclaimer: "Alpha State: Active and constant development",
+        download: "Get Odeug Launcher",
+        youtube: "Visit our YouTube channel",
+        reddit: "Join the Reddit community"
+      }
+    };
+
+    let currentLang = 'es';
+
+    function initPixelText() {
+      const lang = translations[currentLang];
+      
+      renderText(lang.demo, "pixel-text-demo");
+      renderText(lang.slogan, "pixel-text-slogan");
+      
+      const sloganContainer = document.getElementById("pixel-text-slogan");
+      const icon = document.createElement('img');
+      icon.src = 'minecraft_logo_icon_168974.webp';
+      icon.className = 'pixel-icon';
+      sloganContainer.appendChild(icon);
+
+      renderText(lang.philosophy, "pixel-text-philosophy");
+      
+      renderText(lang.compat, "pixel-text-compat");
+      const compatContainer = document.getElementById("pixel-text-compat");
+      const mcIcon = document.createElement('img');
+      mcIcon.src = 'minecraft_logo_icon_168974.webp';
+      mcIcon.className = 'pixel-icon';
+      compatContainer.appendChild(mcIcon);
+
+      renderText(lang.f1, "pixel-text-features-1");
+      renderText(lang.f2, "pixel-text-features-2");
+      renderText(lang.f3, "pixel-text-features-3");
+      renderText(lang.multi, "pixel-text-multi");
+      renderText(lang.disclaimer, "pixel-text-disclaimer");
+
+      renderText(lang.download, "pixel-text-download");
+      renderText(lang.youtube, "pixel-text-youtube");
+      renderText(lang.reddit, "pixel-text-reddit");
+    }
+
+    function detectLanguage() {
+      const browserLang = navigator.language.split('-')[0];
+      if (translations[browserLang]) {
+        currentLang = browserLang;
+      } else {
+        currentLang = 'en';
+      }
+      initPixelText();
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      initPixelText();
+    });
+
+    window.onload = detectLanguage;
+  </script>
+</body>
+
+</html>
